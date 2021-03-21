@@ -29,8 +29,8 @@ python train.py  --dataset_path <path-to-dataset> \
 
 ```shell
 CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content <path-to-image> \
-                                      --model <path-to-checkpoint> \
-                                      --URST
+                                             --model <path-to-checkpoint> \
+                                             --URST
 ```
 
 for example:
