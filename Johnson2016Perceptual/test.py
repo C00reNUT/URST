@@ -24,7 +24,7 @@ def save_image(image, save_path):
     
     
 def style_transfer_thumbnail(image_thumb, save_path, save=True):
-    init_thumbnail_instance_norm(net, collection=True, clear=True)
+    init_thumbnail_instance_norm(net, collection=True)
     stylized_thumb = net.forward(image_thumb)
     if save:
         save_image(stylized_thumb, save_path)
@@ -32,7 +32,7 @@ def style_transfer_thumbnail(image_thumb, save_path, save=True):
 
 def style_transfer_high_resolution(patches, padding, save_path, collection=False, save=True):
     stylized_patches = []
-    init_thumbnail_instance_norm(net, collection=collection, clear=False)
+    init_thumbnail_instance_norm(net, collection=collection)
     for patch in tqdm(patches):
         patch = patch.unsqueeze(0).to(device)
         stylized_patch = net.forward(patch)

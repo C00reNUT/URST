@@ -114,10 +114,7 @@ class ThumbWhitenColorTransform(ThumbInstanceNorm):
 
 
 
-def init_thumbnail_instance_norm(model, collection, clear):
+def init_thumbnail_instance_norm(model, collection):
     for name, layer in model.named_modules():
         if isinstance(layer, ThumbInstanceNorm):
             layer.collection = collection
-            if clear:
-                layer.thumb_mean = None
-                layer.var = None

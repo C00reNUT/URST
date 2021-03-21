@@ -118,7 +118,7 @@ def save_image(image, save_path):
     
     
 def style_transfer_thumb(thumb, sFs, save_path, save=True, wct_mode="cpu"):
-    init_thumbnail_instance_norm(wct, collection=True, clear=True)
+    init_thumbnail_instance_norm(wct, collection=True)
     stylized = styleTransfer(thumb, sFs, wct_mode)
     if save:
         save_image(stylized, save_path)
@@ -126,7 +126,7 @@ def style_transfer_thumb(thumb, sFs, save_path, save=True, wct_mode="cpu"):
 
 def style_transfer_high_resolution(patches, sFs, padding, collection, save_path, save=True, wct_mode="cpu"):
     stylized_patches = []
-    init_thumbnail_instance_norm(wct, collection=collection, clear=False)
+    init_thumbnail_instance_norm(wct, collection=collection)
     for patch in tqdm(patches):
         patch = patch.unsqueeze(0).to(device)
         stylized_patch = styleTransfer(patch, sFs, wct_mode)

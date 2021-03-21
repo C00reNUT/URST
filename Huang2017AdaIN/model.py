@@ -237,5 +237,5 @@ class NetV2(nn.Module):
         for i in range(1, 4):
             loss_s += self.calc_style_loss(g_t_thumb_feats[i], style_thumb_feats[i])
         
-        loss_patch = self.calc_content_loss(g_t_patch_feats[-1], g_t_thumb_crop_feats[-1])
-        return loss_c, loss_s, loss_patch
+        loss_sp = self.calc_content_loss(g_t_patch_feats[-1], g_t_thumb_crop_feats[-1])
+        return loss_c, loss_s, loss_sp

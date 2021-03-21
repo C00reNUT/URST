@@ -69,14 +69,14 @@ def save_image(image, save_path):
     
 def style_transfer_thumbnail(content, style_f, save_path, save=False):
     content = content.unsqueeze(0)
-    init_thumbnail_instance_norm(thumb_adaptive_instance_norm, collection=True, clear=True)
+    init_thumbnail_instance_norm(thumb_adaptive_instance_norm, collection=True)
     stylized_thumb = style_transfer(vgg, decoder, content, style_f, args.alpha)
     if save:
         save_image(stylized_thumb, save_path)
 
 def style_transfer_high_resolution(patches, style_f, padding, save_path, collection=False, save=True):
     stylized_patches = []
-    init_thumbnail_instance_norm(thumb_adaptive_instance_norm, collection=collection, clear=False)
+    init_thumbnail_instance_norm(thumb_adaptive_instance_norm, collection=collection)
     for patch in tqdm(patches):
         patch = patch.unsqueeze(0).to(device)
         stylized_patch = style_transfer(vgg, decoder, patch, style_f, args.alpha)

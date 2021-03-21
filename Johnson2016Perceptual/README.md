@@ -3,6 +3,7 @@
 <p align="center">
     <img src="assets/zurich.jpg" width="900"\>
 </p>
+
 PyTorch implementation of [Fast Neural Style Transfer](https://cs.stanford.edu/people/jcjohns/eccv16/) ([official Lua implementation](https://github.com/jcjohnson/fast-neural-style)).
 
 ## Requirements
