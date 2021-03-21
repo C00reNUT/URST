@@ -182,7 +182,8 @@ if __name__ == '__main__':
         start_time = time.time()
         
         if args.URST:
-            thumbnail = image.resize((args.thumb_size, args.thumb_size))
+            aspect_ratio = IMAGE_WIDTH / IMAGE_HEIGHT
+            thumbnail = image.resize((int(aspect_ratio * args.thumb_size), args.thumb_size))
             patches = preprocess(image, padding=PADDING, patch_size=PATCH_SIZE, transform=content_tf, cuda=False)
             thumbnail = content_tf(thumbnail).unsqueeze(0).to(device)
             style = style_tf(style).unsqueeze(0).to(device)

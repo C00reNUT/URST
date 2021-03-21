@@ -21,6 +21,7 @@ Use `--content` and `--style` to provide the respective path to the content and 
 ```shell
 CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content ../examples/content/pexels-andrea-piacquadio-3830880.jpg \
                                              --style ../examples/style/line2.png \
+                                             --padding 64
                                              --URST
 ```
 
