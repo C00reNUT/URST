@@ -106,7 +106,7 @@ if __name__ == "__main__":
             print("thumbnail:", thumbnail.shape)
     
             with torch.no_grad():
-                style_transfer_thumbnail(thumbnail, save_path=os.path.join(args.outf, "thumb-%d.jpg" % PATCH_SIZE),
+                style_transfer_thumbnail(thumbnail, save_path=os.path.join(args.outf, "thumb-%d.jpg" % args.thumb_size),
                                          save=False if args.test_speed else True)
                 style_transfer_high_resolution(patches, padding=PADDING, collection=False,
                                                save_path=os.path.join(args.outf, "ours-width%d-padding%d.jpg"%(PATCH_SIZE, PADDING)),

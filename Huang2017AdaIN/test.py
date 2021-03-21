@@ -152,7 +152,7 @@ if __name__ == '__main__':
             with torch.no_grad():
                 style_f = vgg(style)
                 style_transfer_thumbnail(thumbnail, style_f, save=False if args.test_speed else True,
-                                         save_path=os.path.join(args.outf, "thumb-%d.jpg" % PATCH_SIZE))
+                                         save_path=os.path.join(args.outf, "thumb-%d.jpg" % args.thumb_size))
                 style_transfer_high_resolution(patches, style_f, padding=PADDING, collection=False,
                     save_path=os.path.join(args.outf, "ours-width%d-padding%d.jpg" % (PATCH_SIZE, PADDING)),
                     save=False if args.test_speed else True)
