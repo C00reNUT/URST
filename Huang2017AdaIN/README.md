@@ -21,7 +21,10 @@ I'm really grateful to the [original implementation](https://github.com/xunhuang
 ### Test
 Use `--content` and `--style` to provide the respective path to the content and style image.
 ```shell
-CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content ../examples/content/pexels-andrea-piacquadio-3830880.jpg --style ../examples/style/line2.png --decoder models/decoder_stroke_perceptual_loss_1.pth.tar --URST
+CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content ../examples/content/pexels-andrea-piacquadio-3830880.jpg \
+                                             --style ../examples/style/line2.png \
+                                             --decoder models/decoder_stroke_perceptual_loss_1.pth.tar \
+                                             --URST
 ```
 
 Some options:
@@ -36,7 +39,7 @@ Some options:
 
 ### Train
 Use `--content_dir` and `--style_dir` to provide the respective directory to the content and style images.
-```
+```shell
 CUDA_VISIBLE_DEVICES=<gpu_id> python trainv2.py --content_dir <content_dir> --style_dir <style_dir>
 ```
 
