@@ -10,9 +10,10 @@ I'm really grateful to the [original implementation](https://github.com/xunhuang
 - PyTorch 1.1+
 - TorchVision
 - Pillow
+- tqdm
 
 (optional, for training)
-- tqdm
+
 - TensorboardX
 
 ## Usage

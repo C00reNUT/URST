@@ -166,7 +166,7 @@ if __name__ == '__main__':
             
             with torch.no_grad():
                 style_f = vgg(style)
-                style_transfer_thumbnail(image, style_f, save_path=os.path.join(args.outf, "image-%d.jpg" % PATCH_SIZE),
+                style_transfer_thumbnail(image, style_f, save_path=os.path.join(args.outf, "original_result.jpg"),
                                          save=False if args.test_speed else True)
         
         torch.cuda.synchronize()
